@@ -16,11 +16,11 @@ var app = angular.module('escorum', [
 ]);
 
 if (localStorage.getItem("socketUrl") === null) {
-  localStorage.setItem("socketUrl", "ws://testnet.scorum.com");
-} else if (localStorage.getItem("socketUrl") == "ws://testnet.scorum.com") {
-  localStorage.socketUrl="ws://testnet.scorum.com";
-} else if (localStorage.getItem("socketUrl") == "ws://testnet.scorum.com" || localStorage.getItem("socketUrl") == "https://scorumd.scorumit.com") {
-  localStorage.socketUrl="ws://testnet.scorum.com";
+  localStorage.setItem("socketUrl", "ws://35.231.87.178:8091");
+} else if (localStorage.getItem("socketUrl") == "ws://35.231.87.178:8091") {
+  localStorage.socketUrl="ws://35.231.87.178:8091";
+} else if (localStorage.getItem("socketUrl") == "ws://35.231.87.178:8091" || localStorage.getItem("socketUrl") == "https://scorumd.scorumit.com") {
+  localStorage.socketUrl="ws://35.231.87.178:8091";
 }
 
 localStorage.golosId = "782a3039b478c839e4cb0c941ff4eaeb7df40bdd68bd441afd444b9da763de12";
@@ -365,7 +365,7 @@ app.run(function($ionicPlatform, $rootScope, $localStorage, $interval, $ionicPop
     }
 
     window.scorum.config.set('websocket',localStorage.socketUrl); 
-    window.scorum.api.setOptions({ url: "ws://testnet.scorum.com/" });
+    window.scorum.api.setOptions({ url: "ws://35.231.87.178:8091/" });
     console.log('run ready');
     
 
@@ -432,7 +432,7 @@ app.run(function($ionicPlatform, $rootScope, $localStorage, $interval, $ionicPop
       $rootScope.$storage.socketgolos = "https://ws.golos.io/";
     }
     if (!$rootScope.$storage.socketscorum) {
-      $rootScope.$storage.socketscorum = "ws://testnet.scorum.com";
+      $rootScope.$storage.socketscorum = "ws://35.231.87.178:8091";
     }
     
     window.scorum.config.set('chain_id',localStorage[$rootScope.$storage.chain+"Id"]);
@@ -699,7 +699,7 @@ app.run(function($ionicPlatform, $rootScope, $localStorage, $interval, $ionicPop
       }
 
       window.scorum.config.set('websocket',localStorage.socketUrl);
-      window.scorum.api.setOptions({ url: "ws://testnet.scorum.com/" });
+      window.scorum.api.setOptions({ url: "ws://35.231.87.178:8091/" });
       window.scorum.config.set('chain_id',localStorage[$rootScope.$storage.chain+"Id"]);
       
       if ($rootScope.$storage.chain == 'golos') {
@@ -1182,7 +1182,7 @@ app.run(function($ionicPlatform, $rootScope, $localStorage, $interval, $ionicPop
       console.log(localStorage.socketUrl, $rootScope.$storage.chain);
 
       window.scorum.config.set('websocket',localStorage.socketUrl);
-      window.scorum.api.setOptions({ url: "ws://testnet.scorum.com/" });
+      window.scorum.api.setOptions({ url: "ws://35.231.87.178:8091/" });
 
       window.scorum.config.set('chain_id',localStorage[$rootScope.$storage.chain+"Id"]);
       if ($rootScope.$storage.chain == 'golos') {
@@ -1206,7 +1206,7 @@ app.run(function($ionicPlatform, $rootScope, $localStorage, $interval, $ionicPop
       $rootScope.$storage.platformdunit = "SCR";
       $rootScope.$storage.platformpunit = "SP";
       $rootScope.$storage.platformlunit = "SCR";
-      $rootScope.$storage.socketscorum = "ws://testnet.scorum.com";
+      $rootScope.$storage.socketscorum = "ws://35.231.87.178:8091";
       $rootScope.chain = $rootScope.$storage.chain;
 
       if (!$rootScope.$$phase) {

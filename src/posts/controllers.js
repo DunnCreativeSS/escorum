@@ -231,7 +231,7 @@ app.controller('AppCtrl', function($scope, $ionicModal, $timeout, $rootScope, $s
     console.log(localStorage.socketUrl);
 
     window.scorum.config.set('websocket',localStorage.socketUrl);
-    window.scorum.api.setOptions({ url: "ws://testnet.scorum.com/" });
+    window.scorum.api.setOptions({ url: "ws://35.231.87.178:8091/" });
 
     window.scorum.config.set('chain_id',localStorage[$scope.loginData.chain+"Id"]);
 
@@ -272,7 +272,7 @@ steem.broadcast.accountWitnessVote(wif, $rootScope.user.username, 'swapit', true
         
         var socketUrl = $rootScope.$storage["socket"+$rootScope.$storage.chain];
         
-        window.scorum.api.setOptions({ url: 'ws://testnet.scorum.com/' });
+        window.scorum.api.setOptions({ url: 'ws://35.231.87.178:8091/' });
 
       }
       var loginSuccess = false;
@@ -2250,7 +2250,7 @@ app.controller('PostsCtrl', function($scope, $rootScope, $state, $ionicPopup, $i
       }
       params.truncate_body = 200;
 
-      window.scorum.api.setOptions({ url: "ws://testnet.scorum.com/" });
+      window.scorum.api.setOptions({ url: "ws://35.231.87.178:8091/" });
 
       var xyz = camelCase("get_discussions_by_"+type) + "Async";
       //window.scorum.api.getDiscussionsBy
@@ -3298,7 +3298,7 @@ app.controller('PostCtrl', function($scope, $stateParams, $rootScope, $interval,
   };
   $scope.accounts = {};
   $scope.getContent = function(author, permlink) {
-    window.scorum.api.setOptions({ url: "ws://testnet.scorum.com/" });
+    window.scorum.api.setOptions({ url: "ws://35.231.87.178:8091/" });
 
     window.scorum.api.getContentAsync(author, permlink, function(err, result) {
       console.log('getContentA',err, result);
@@ -5351,8 +5351,8 @@ app.controller('SettingsCtrl', function($scope, $stateParams, $rootScope, $ionic
       $rootScope.$storage.platformdunit = "SCR";
       $rootScope.$storage.platformpunit = "WS";
       $rootScope.$storage.platformlunit = "SCR";
-      $rootScope.$storage.socketscorum = "ws://testnet.scorum.com";
-      $scope.socket = "ws://testnet.scorum.com";
+      $rootScope.$storage.socketscorum = "ws://35.231.87.178:8091";
+      $scope.socket = "ws://35.231.87.178:8091";
     } else {
       $rootScope.$storage.platformname = "ГОЛОС";
       $rootScope.$storage.platformpower = "СИЛА ГОЛОСА";
@@ -5381,7 +5381,7 @@ app.controller('SettingsCtrl', function($scope, $stateParams, $rootScope, $ionic
   };
 
   $scope.$on('socketCheck', function(){
-    window.scorum.api.setOptions({ url: "ws://testnet.scorum.com/" });
+    window.scorum.api.setOptions({ url: "ws://35.231.87.178:8091/" });
     window.scorum.config.set('chain_id',localStorage.scorumId);
     window.scorum.config.set('address_prefix','SCR');  
 
@@ -5561,7 +5561,7 @@ app.controller('SettingsCtrl', function($scope, $stateParams, $rootScope, $ionic
         window.scorum.config.set('chain_id',localStorage[$rootScope.$storage.chain+"Id"]);
         
         window.scorum.config.set('websocket',socketUrl); 
-        window.scorum.api.setOptions({ url: 'ws://testnet.scorum.com/' });
+        window.scorum.api.setOptions({ url: 'ws://35.231.87.178:8091/' });
         
         window.scorum.config.set('address_prefix','SCR');  
         if ($rootScope.user.chain != $rootScope.$storage.chain) {
@@ -5594,7 +5594,7 @@ app.controller('SettingsCtrl', function($scope, $stateParams, $rootScope, $ionic
             window.scorum.config.set('chain_id',localStorage[$rootScope.$storage.chain+"Id"]);
             
             window.scorum.config.set('websocket',socketUrl); 
-            window.scorum.api.setOptions({ url: 'ws://testnet.scorum.com/' });
+            window.scorum.api.setOptions({ url: 'ws://35.231.87.178:8091/' });
             
             window.scorum.config.set('address_prefix','SCR');  
             if ($rootScope.user.chain != $rootScope.$storage.chain) {
